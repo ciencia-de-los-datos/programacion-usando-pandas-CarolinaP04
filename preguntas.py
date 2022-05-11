@@ -225,7 +225,7 @@ def pregunta_12():
     tbl2_ds = tbl2.groupby("_c0")["_c5"].apply(lambda x: sorted(list(x)))
 
     df_tbl2 = pd.DataFrame(tbl2_ds).reset_index()
-    df_tbl2.sort_value(["_c0"],ascending=True)
+    df_tbl2.sort_values(["_c0"],ascending=True)
     df_tbl2["_c5"] = df_tbl2["_c5"].map(lambda x: ",".join(x))
 
     return df_tbl2
